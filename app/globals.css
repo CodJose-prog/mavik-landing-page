@@ -1,0 +1,78 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color: #171123;
+  background-color: #fdfdfd;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-space-grotesk), system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: #fdfdfd;
+  color: #171123;
+  min-height: 100vh;
+  position: relative;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle at 20% 20%, rgba(111, 45, 189, 0.08), transparent 32%),
+    radial-gradient(circle at 80% 10%, rgba(166, 99, 204, 0.12), transparent 35%),
+    linear-gradient(180deg, rgba(253, 253, 253, 0.75), rgba(253, 253, 253, 0));
+  pointer-events: none;
+  z-index: -1;
+  filter: blur(0px);
+}
+
+.glass {
+  background: rgba(255, 255, 255, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 20px 60px rgba(23, 17, 35, 0.12);
+  backdrop-filter: blur(12px);
+}
+
+.section-shell {
+  @apply max-w-6xl mx-auto px-6 sm:px-10;
+}
+
+.gradient-border {
+  position: relative;
+  overflow: hidden;
+}
+
+.gradient-border::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  background: linear-gradient(135deg, rgba(111, 45, 189, 0.7), rgba(166, 99, 204, 0.35));
+  z-index: 0;
+  border-radius: inherit;
+}
+
+.gradient-border > * {
+  position: relative;
+  z-index: 1;
+}
+
+:focus-visible {
+  outline: 2px solid #6f2dbd;
+  outline-offset: 4px;
+}
+
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}

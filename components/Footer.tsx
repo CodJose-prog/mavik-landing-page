@@ -1,4 +1,6 @@
-﻿import { WHATSAPP_NUMBER } from "../utils/whatsapp";
+﻿import Image from "next/image";
+import Link from "next/link";
+import { WHATSAPP_NUMBER } from "../utils/whatsapp";
 
 export default function Footer() {
   const whatsappHref = `https://wa.me/${WHATSAPP_NUMBER}`;
@@ -7,7 +9,17 @@ export default function Footer() {
     <footer className="border-t border-mavik-secondary/20 bg-[#fdfdfd] text-[#171123]">
       <div className="section-shell py-12">
         <div className="grid gap-10 md:grid-cols-3">
-          <div className="space-y-3">
+          <div className="space-y-4">
+            <Link href="/" className="inline-flex items-center" aria-label="Ir para o inicio">
+              <Image
+                src="/brand/logo.svg"
+                alt="MAVIK"
+                width={375}
+                height={225}
+                sizes="(min-width: 1024px) 60px, (min-width: 640px) 54px, 48px"
+                className="h-7 w-auto object-contain sm:h-8"
+              />
+            </Link>
             <p className="text-sm text-[#171123]/70">
               Criadores de soluções digitais inteligentes para empresas que querem crescer com tecnologia.
             </p>

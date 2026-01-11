@@ -10,18 +10,25 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  title: "MAVIK - sistemas online, sob medida e manutenção em Santarém",
-  description: "Sistemas online prontos, projetos sob medida e manutenção contínua para empresas de Santarém e região.",
+  title: "MAVIK — Sistemas online e soluções digitais",
+  description: "Sistemas online, soluções sob medida e manutenção digital para empresas.",
+  icons: {
+    icon: [
+      { url: "/brand/favicon.ico" },
+      { url: "/brand/favicon-32x32.png", type: "image/png", sizes: "32x32" },
+      { url: "/brand/favicon-16x16.png", type: "image/png", sizes: "16x16" },
+    ],
+    apple: [{ url: "/brand/apple-touch-icon.png", type: "image/png", sizes: "180x180" }],
+  },
   openGraph: {
-    title: "MAVIK - sistemas online, sob medida e manutenção",
-    description:
-      "Sistemas online com tudo incluso, projetos sob medida e manutenção com vigência mínima de 12 meses. Contrato via WhatsApp.",
-    url: "https://mavik.site",
+    title: "MAVIK — Sistemas online e soluções digitais",
+    description: "Sistemas online, soluções sob medida e manutenção digital para empresas.",
+    url: "https://mavik.cloud",
     siteName: "MAVIK",
     locale: "pt_BR",
     type: "website",
   },
-  metadataBase: new URL("https://mavik.site"),
+  metadataBase: new URL("https://mavik.cloud"),
 };
 
 export default function RootLayout({

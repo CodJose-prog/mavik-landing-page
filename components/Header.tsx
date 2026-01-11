@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { usePathname, useRouter } from "next/navigation";
@@ -15,7 +16,6 @@ const navItems = [
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
-  const LOGO_TRANSFORM = "scale(1.65) translateX(-6%)";
   const router = useRouter();
   const pathname = usePathname();
 
@@ -47,13 +47,15 @@ export default function Header() {
       }`}
     >
       <div className="section-shell flex items-center gap-6 py-4">
-        <Link href="/" className="inline-flex shrink-0 items-center px-2 py-2" aria-label="Ir para o inicio">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src="/logo-mavik.svg"
+        <Link href="/" className="inline-flex shrink-0 items-center" aria-label="Ir para o inicio">
+          <Image
+            src="/brand/logo.svg"
             alt="MAVIK"
-            className="h-11 w-auto shrink-0 max-w-none object-contain sm:h-12 md:h-16 lg:h-[72px]"
-            style={{ transform: LOGO_TRANSFORM, transformOrigin: "left center" }}
+            width={395}
+            height={245}
+            sizes="(min-width: 1024px) 68px, (min-width: 640px) 60px, 54px"
+            priority
+            className="h-10 w-auto shrink-0 object-contain sm:h-10 md:h-12 drop-shadow-sm"
           />
         </Link>
 

@@ -719,11 +719,11 @@ export default function CheckoutWhatsApp() {
         <div className="space-y-6">
           {renderIncludedDomain()}
           <div>
-            <p className="text-sm font-semibold text-mavik-dark">Informacoes operacionais (opcional)</p>
+            <p className="text-sm font-semibold text-mavik-dark">Informações operacionais (opcional)</p>
             <div className="mt-3 grid gap-4 md:grid-cols-2">
               <div className="space-y-2">
                 <label className="text-sm font-semibold text-mavik-dark" htmlFor="saas-users">
-                  Usuarios (opcional)
+                  Usuários (opcional)
                 </label>
                 <input
                   id="saas-users"
@@ -1140,11 +1140,11 @@ export default function CheckoutWhatsApp() {
           <div className="space-y-6">
             {renderIncludedDomain()}
             <div>
-              <p className="text-sm font-semibold text-mavik-dark">Informacoes operacionais (opcional)</p>
+              <p className="text-sm font-semibold text-mavik-dark">Informações operacionais (opcional)</p>
               <div className="mt-3 grid gap-4 md:grid-cols-2">
                 <div className="space-y-2">
                   <label className="text-sm font-semibold text-mavik-dark" htmlFor="system-users">
-                    Usuarios (opcional)
+                    Usuários (opcional)
                   </label>
                   <input
                     id="system-users"

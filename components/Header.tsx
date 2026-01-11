@@ -76,7 +76,7 @@ export default function Header() {
           rel="noreferrer"
           className="hidden shrink-0 rounded-full bg-mavik-primary px-5 py-2 text-sm font-semibold text-white shadow-glow transition hover:-translate-y-0.5 hover:bg-mavik-secondary lg:inline-flex"
         >
-          Falar no WhatsApp
+          Falar no WhatsApp da MAVIK
         </a>
       </div>
     </header>

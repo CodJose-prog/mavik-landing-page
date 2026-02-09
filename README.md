@@ -33,11 +33,3 @@ Landing page criada com Next.js 16 (app router + TypeScript) que apresenta a con
 5. `npm run lint` garante que o ESLint (configurado em `eslint.config.mjs` / `.eslintrc.json`) passe sem avisos.
 
 > ✅ O `checkout` foi pensado para abrir o WhatsApp com contratos mínimos de 12 meses e informações completas do cliente. Ajustes de serviços, preços ou planos ficam centralizados em `src/lib/offerings.ts`, `lib/systems.ts` e `components/Plans.tsx` / `Saas.tsx`.
-
-## Próximos passos que ajudam recrutadores
-1. **Documentar métricas de usabilidade**: já há etapas guiadas e CTA distribuídos, vale destacar no README o porquê de cada seção.
-2. **Adicionar testes visuais ou screenshots**: facilita a avaliação da estética antes de abrir o deploy.
-3. **Conectar analytics** (Vercel, Google Analytics, etc.) para mostrar quantos leads chegam via o checkout baseado em WhatsApp.
-4. **Atualizar `NEXT_PUBLIC_SITE_URL`** quando for subir para o domínio final e documentar o processo (ex.: Vercel Environment Variables).
-
-Caso precise de ajuda para subir no GitHub/GitHub Pages ou adicionar badges/status, posso orientar também.

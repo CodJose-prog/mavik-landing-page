@@ -1,27 +1,35 @@
-import { ArrowUpRight, Bot, MapPin } from "lucide-react"
+import heroAsset from "../../public/assets/hero/creatvise-GNMd5gkTOVY-unsplash.jpg"
+import { Bot, MapPin } from "lucide-react"
 import { homeContent } from "../../lib/content/home"
 import { primaryCtas } from "../../lib/site-links"
 import OpenSecretaryButton from "../assistant/OpenSecretaryButton"
 import BadgeTag from "../shared/BadgeTag"
 import CTAButton from "../shared/CTAButton"
+import EditorialAsset from "../shared/EditorialAsset"
 import SectionContainer from "../shared/SectionContainer"
 
 export default function HeroSection() {
   const { hero } = homeContent
+  const [regionalPresence, businessFit, continuity] = hero.proofCards
+  const floatingCardClassName =
+    "rounded-[24px] border border-white/14 bg-[linear-gradient(180deg,rgba(255,255,255,0.18),rgba(255,255,255,0.06))] p-4 shadow-[0_24px_60px_rgba(0,0,0,0.26)] backdrop-blur-xl"
 
   return (
-    <section className="relative overflow-hidden pb-20 pt-10 sm:pb-24 sm:pt-14 lg:pb-24 lg:pt-10" id="top">
+    <section className="relative overflow-hidden pb-16 pt-6 sm:pb-20 sm:pt-8 lg:pb-20 lg:pt-4" id="top">
       <div className="pointer-events-none absolute inset-0 bg-hero-mesh opacity-80" aria-hidden />
-      <div className="pointer-events-none absolute left-0 top-10 h-64 w-64 rounded-full bg-mavik-copper-soft blur-3xl" aria-hidden />
       <div
-        className="pointer-events-none absolute right-0 top-4 h-72 w-72 rounded-full bg-[rgba(216,215,255,0.1)] blur-3xl"
+        className="pointer-events-none absolute left-0 top-8 h-56 w-56 rounded-full bg-mavik-copper-soft blur-3xl"
+        aria-hidden
+      />
+      <div
+        className="pointer-events-none absolute right-0 top-0 h-64 w-64 rounded-full bg-[rgba(216,215,255,0.1)] blur-3xl"
         aria-hidden
       />
       <div className="hairline pointer-events-none absolute inset-x-0 top-0 h-px" aria-hidden />
 
       <SectionContainer className="relative z-10">
-        <div className="grid gap-10 lg:min-h-[calc(100svh-132px)] lg:grid-cols-[minmax(0,1fr)_400px] lg:items-start xl:gap-12">
-          <div className="space-y-8 pt-2">
+        <div className="grid gap-10 lg:min-h-[calc(100svh-168px)] lg:grid-cols-[minmax(0,0.9fr)_minmax(520px,1.1fr)] lg:items-start xl:min-h-[calc(100svh-156px)] xl:grid-cols-[minmax(0,0.84fr)_minmax(600px,1.16fr)] xl:gap-14">
+          <div className="space-y-7">
             <div className="max-w-[700px] space-y-5">
               <div className="flex flex-wrap items-center gap-3">
                 <BadgeTag className="border-[rgba(123,103,255,0.18)] bg-[rgba(123,103,255,0.12)] text-mavik-text">
@@ -60,94 +68,60 @@ export default function HeroSection() {
                 {hero.secondaryCta.label}
               </CTAButton>
             </div>
-
-            <div className="rounded-[30px] border border-mavik-line bg-white/[0.03] p-5 sm:p-6">
-              <div className="grid gap-4 lg:grid-cols-[minmax(0,1fr)_280px] lg:items-start">
-                <div>
-                  <p className="text-xs font-semibold uppercase tracking-[0.18em] text-mavik-copper">
-                    Confiança comercial
-                  </p>
-                  <p className="mt-3 text-sm leading-7 text-mavik-muted-strong sm:text-[0.97rem]">{hero.trustLine}</p>
-                </div>
-
-                <div className="rounded-[24px] border border-[rgba(123,103,255,0.14)] bg-[linear-gradient(180deg,rgba(123,103,255,0.08),rgba(123,103,255,0.03))] p-4">
-                  <div className="flex items-center gap-3">
-                    <span className="inline-flex h-10 w-10 items-center justify-center rounded-[16px] border border-[rgba(123,103,255,0.18)] bg-[rgba(123,103,255,0.08)] text-mavik-copper">
-                      <Bot className="h-4.5 w-4.5" aria-hidden />
-                    </span>
-                    <div>
-                      <p className="text-xs font-semibold uppercase tracking-[0.18em] text-mavik-copper">
-                        Triagem assistida
-                      </p>
-                      <p className="text-sm text-mavik-muted">Secretária IA integrada ao fluxo</p>
-                    </div>
-                  </div>
-                  <p className="mt-4 text-sm leading-7 text-mavik-muted">
-                    Atendimento inicial em tempo real para qualificar cenário e urgência antes do contato comercial.
-                  </p>
-                </div>
-              </div>
-            </div>
           </div>
 
-          <aside className="panel-strong relative overflow-hidden rounded-[34px] p-6 sm:p-7">
-            <div className="hairline absolute inset-x-8 top-0 h-px" aria-hidden />
-
-            <div className="relative space-y-6">
-              <div className="space-y-3">
-                <BadgeTag className="border-[rgba(216,215,255,0.16)] bg-white/[0.05] text-mavik-muted-strong">
-                  Como a MAVIK conduz um projeto
+          <aside className="lg:pl-2 lg:pt-10 xl:pt-12">
+            <EditorialAsset
+              asset={heroAsset}
+              alt="Ambiente visual futurista com iluminação violeta para representar sofisticação tecnológica"
+              sizes="(min-width: 1440px) 640px, (min-width: 1280px) 46vw, (min-width: 1024px) 52vw, 100vw"
+              priority
+              quality={92}
+              className="aspect-[1/1] min-h-[400px] sm:aspect-[6/5] sm:min-h-0 lg:aspect-[15/11] xl:aspect-[16/11]"
+              imageClassName="object-contain object-center px-4 py-6 sm:px-8 sm:py-8 lg:px-8 lg:py-10"
+              baseOverlayClassName="bg-[linear-gradient(180deg,rgba(4,5,12,0.06)_0%,rgba(4,5,12,0.14)_52%,rgba(4,5,12,0.32)_100%)]"
+              overlayClassName="bg-[radial-gradient(circle_at_16%_18%,rgba(255,255,255,0.14),transparent_22%),radial-gradient(circle_at_85%_20%,rgba(123,103,255,0.22),transparent_28%),radial-gradient(circle_at_78%_82%,rgba(216,215,255,0.1),transparent_24%)]"
+            >
+              <div className="relative h-full p-4 sm:p-6 lg:p-7">
+                <BadgeTag className="absolute left-4 top-4 border-white/16 bg-white/10 text-mavik-muted-strong backdrop-blur-xl sm:left-6 sm:top-6">
+                  Entrega estruturada
                 </BadgeTag>
-                <h2 className="font-display text-[1.65rem] font-semibold tracking-[-0.05em] text-mavik-text">
-                  Estrutura de entrega com leitura de negócio e continuidade técnica
-                </h2>
-                <p className="text-sm leading-7 text-mavik-muted">
-                  O projeto precisa responder ao contexto real da operação, não apenas gerar presença visual.
-                </p>
-              </div>
 
-              <div className="grid gap-3 sm:grid-cols-2">
-                {hero.proofCards.map((item, index) => (
-                  <article
-                    key={item.title}
-                    className={`rounded-[24px] border border-mavik-line bg-white/[0.03] p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.03)] ${index === 2 ? "sm:col-span-2" : ""}`}
-                  >
-                    <div className="flex items-center gap-3">
-                      <span className="inline-flex h-8 w-8 items-center justify-center rounded-[12px] border border-[rgba(123,103,255,0.18)] bg-[rgba(123,103,255,0.08)] text-xs font-semibold text-mavik-copper">
-                        0{index + 1}
-                      </span>
-                      <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-mavik-copper">
-                        {item.eyebrow}
-                      </p>
-                    </div>
-                    <h3 className="font-display mt-3 text-[1.02rem] font-semibold tracking-[-0.04em] text-mavik-text">
-                      {item.title}
-                    </h3>
-                    <p className="mt-2 text-sm leading-6 text-mavik-muted">{item.description}</p>
-                  </article>
-                ))}
-              </div>
+                <article
+                  className={`${floatingCardClassName} absolute left-4 top-16 max-w-[12rem] sm:left-6 sm:top-20 sm:max-w-[13rem]`}
+                >
+                  <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-mavik-copper">
+                    {regionalPresence.eyebrow}
+                  </p>
+                  <h2 className="font-display mt-2 text-base font-semibold tracking-[-0.045em] text-mavik-text sm:text-[1.05rem]">
+                    {regionalPresence.title}
+                  </h2>
+                </article>
 
-              <div className="rounded-[26px] border border-[rgba(123,103,255,0.16)] bg-[rgba(123,103,255,0.08)] p-5">
-                <div className="flex items-start justify-between gap-4">
-                  <div className="space-y-2">
-                    <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-mavik-copper">
-                      Atendimento inicial inteligente
-                    </p>
-                    <p className="text-sm leading-7 text-mavik-muted-strong">
-                      A Secretária IA qualifica a conversa e reduz atrito no primeiro contato.
-                    </p>
-                  </div>
-                  <ArrowUpRight className="mt-1 h-4.5 w-4.5 shrink-0 text-mavik-copper" aria-hidden />
-                </div>
+                <article
+                  className={`${floatingCardClassName} absolute right-4 top-[24%] hidden max-w-[11.5rem] sm:block sm:right-6 sm:max-w-[12.5rem]`}
+                >
+                  <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-mavik-copper">
+                    {businessFit.eyebrow}
+                  </p>
+                  <h2 className="font-display mt-2 text-base font-semibold tracking-[-0.045em] text-mavik-text sm:text-[1.05rem]">
+                    {businessFit.title}
+                  </h2>
+                </article>
 
-                <div className="mt-4 border-t border-white/10 pt-4">
-                  <OpenSecretaryButton size="sm" className="w-full justify-between">
-                    {primaryCtas.talkToSecretary.label}
-                  </OpenSecretaryButton>
-                </div>
+                <article
+                  className={`${floatingCardClassName} absolute bottom-4 left-4 right-4 sm:bottom-6 sm:left-6 sm:right-auto sm:max-w-[19rem]`}
+                >
+                  <p className="text-[10px] font-semibold uppercase tracking-[0.22em] text-mavik-copper">
+                    {continuity.eyebrow}
+                  </p>
+                  <h2 className="font-display mt-2 text-[1.05rem] font-semibold tracking-[-0.045em] text-mavik-text sm:text-[1.15rem]">
+                    {continuity.title}
+                  </h2>
+                  <p className="mt-2 text-sm leading-6 text-mavik-muted-strong">{continuity.description}</p>
+                </article>
               </div>
-            </div>
+            </EditorialAsset>
           </aside>
         </div>
       </SectionContainer>

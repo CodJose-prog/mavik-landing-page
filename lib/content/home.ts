@@ -21,7 +21,7 @@ export const navigationItems = primaryNavigationItems
 export const homeContent = {
   hero: {
     eyebrow: "Software sob medida, apps, plataformas web e sites institucionais para empresas",
-    title: "Tecnologia sob medida para empresas que precisam operar com mais clareza, eficiência e controle",
+    title: "Tecnologia sob medida para empresas que precisam crescer",
     description:
       "A MAVIK desenvolve sistemas personalizados, aplicativos, plataformas web, automações e sites institucionais para empresas que precisam de mais estrutura.",
     primaryCta: {

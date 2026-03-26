@@ -1,17 +1,31 @@
-﻿import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
+import { Sora, Source_Sans_3 } from "next/font/google";
+import SecretaryWidgetMount from "../components/assistant/SecretaryWidgetMount";
+import { siteConfig } from "../lib/seo/site";
 import "./globals.css";
-import { Space_Grotesk } from "next/font/google";
 
-const spaceGrotesk = Space_Grotesk({
+const sora = Sora({
   subsets: ["latin"],
-  variable: "--font-space-grotesk",
+  variable: "--font-sora",
+  weight: ["500", "600", "700"],
+  display: "swap",
+});
+
+const sourceSans3 = Source_Sans_3({
+  subsets: ["latin"],
+  variable: "--font-source-sans-3",
   weight: ["400", "500", "600", "700"],
   display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "MAVIK — Sistemas online e soluções digitais",
-  description: "Sistemas online, soluções sob medida e manutenção digital para empresas.",
+  metadataBase: new URL(siteConfig.url),
+  title: {
+    default: siteConfig.name,
+    template: `%s | ${siteConfig.name}`,
+  },
+  description: siteConfig.description,
+  applicationName: siteConfig.name,
   icons: {
     icon: [
       { url: "/brand/favicon.ico" },
@@ -20,27 +34,34 @@ export const metadata: Metadata = {
     ],
     apple: [{ url: "/brand/apple-touch-icon.png", type: "image/png", sizes: "180x180" }],
   },
-  openGraph: {
-    title: "MAVIK — Sistemas online e soluções digitais",
-    description: "Sistemas online, soluções sob medida e manutenção digital para empresas.",
-    url: "https://mavik.cloud",
-    siteName: "MAVIK",
-    locale: "pt_BR",
-    type: "website",
+  alternates: {
+    canonical: "/",
   },
-  metadataBase: new URL("https://mavik.cloud"),
+};
+
+export const viewport: Viewport = {
+  themeColor: "#05080d",
+  colorScheme: "dark",
 };
 
 export default function RootLayout({
   children,
-}: {
+}: Readonly<{
   children: React.ReactNode;
-}) {
+}>) {
   return (
     <html lang="pt-BR" className="scroll-smooth">
-      <body className={`${spaceGrotesk.variable} antialiased bg-mavik-light text-mavik-dark`}>
+      <body className={`${sora.variable} ${sourceSans3.variable} bg-mavik-bg text-mavik-text antialiased`}>
+        <a
+          href="#conteudo"
+          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-[14px] focus:bg-mavik-copper focus:px-4 focus:py-3 focus:font-semibold focus:text-[#f7f7ff]"
+        >
+          Pular para o conteúdo
+        </a>
         {children}
+        <SecretaryWidgetMount />
       </body>
     </html>
   );
 }
+

@@ -142,9 +142,9 @@ export const homeContent = {
     title: "Soluções desenvolvidas",
     description: "Projetos apresentados por contexto, tipo de solução e aderência ao negócio.",
     overview: {
-      title: "Recorte institucional",
-      description: "Cases apresentados por contexto e tipo de solução, sem excesso de detalhe.",
-      items: ["Contexto claro", "Tipo de solução", "Tom institucional"],
+      title: "Nossos projetos",
+      description: "Cases de sucesso que mudaram a rotina de empresas do Pará e de outras regiões do Brasil.",
+      items: ["Avanço Tecnológico", "Inovação", "Resultados Relevantes"],
     },
     items: [
       {
